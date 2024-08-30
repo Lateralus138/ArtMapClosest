@@ -1,0 +1,11 @@
+#pragma once
+#include <Windows.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <sstream>
+#include <regex>
+#include <iomanip>
+#include "Globals.h"
+#include "ArgumentParser.h"
