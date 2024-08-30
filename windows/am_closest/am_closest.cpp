@@ -57,19 +57,27 @@ int static ParseArguments(ArgumentParser& args, Options& options)
     }
     if (Globals::IsStringInt(*iter))
     {
-      std::string worker = *iter;
-      const int integer = std::stoi(worker, nullptr, 10);
+      //std::string worker = *iter;
+      //const int integer = std::stoi(worker, nullptr, 10);
+      //if (!Globals::ValueInRange(integer, 0x000000, 0xffffff)) return 3;
+      //else options.hexadecimals.push_back(integer);
+      const int integer = std::stoi(std::string(*iter), nullptr, 10);
       if (!Globals::ValueInRange(integer, 0x000000, 0xffffff)) return 3;
-      else options.hexadecimals.push_back(integer);
+      options.hexadecimals.push_back(integer);
       continue;
     }
     if (Globals::IsHexadecimalString(*iter))
     {
+      //std::string worker = *iter;
+      //if (worker.substr(0, 2) != "0x") worker.insert(0, "0x");
+      //const int hex = std::stoi(worker, nullptr, 16);
+      //if (!Globals::ValueInRange(hex, 0x000000, 0xffffff)) return 3;
+      //else options.hexadecimals.push_back(hex);
       std::string worker = *iter;
       if (worker.substr(0, 2) != "0x") worker.insert(0, "0x");
       const int hex = std::stoi(worker, nullptr, 16);
       if (!Globals::ValueInRange(hex, 0x000000, 0xffffff)) return 3;
-      else options.hexadecimals.push_back(hex);
+      options.hexadecimals.push_back(hex);
       continue;
     }
   }
