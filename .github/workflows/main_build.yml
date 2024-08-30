@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: microsoft/setup-msbuild@v1.3.1
-    - id: make_hosts_compress
+    - id: make_am_closest
       run: |
         cd scripts
         ./build.ps1
@@ -76,7 +76,7 @@ jobs:
         git commit --allow-empty -am "Pushed .\docs\json\* to master. - $(Get-Date ([datetime]::UtcNow)) UTC"
         git push --force origin master
     - uses: ncipollo/release-action@v1
-      if: steps.make_hosts_compress.conclusion == 'success'
+      if: steps.make_am_closest.conclusion == 'success'
       with:
         allowUpdates: True
         tag: ${{ env.VS_FULL }}

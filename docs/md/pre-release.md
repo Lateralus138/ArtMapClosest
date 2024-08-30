@@ -1,4 +1,4 @@
-# Hosts Compress - [am_closest] (Pre-release)
+# ArtMap Closest - [am_closest] (Pre-release)
 
 ![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Lateralus138&repo=ArtMapClosest)
 
