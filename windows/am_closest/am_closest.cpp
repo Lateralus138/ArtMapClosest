@@ -5,6 +5,14 @@ std::vector<std::string> XOPTS = { "/x", "/0x", "/X", "/0X" };
 std::vector<std::string> UNIOPTS = { "/u", "/unicode", "/U", "/UNICODE" };
 std::vector<std::string> OCTOPTS = { "/o", "/octothorpe", "/O", "/octothorpe" };
 std::vector<std::string> EMPOPTS = { "/e", "/empty", "/E", "/EMPTY" };
+void static SwitchOptions(ArgumentParser& args, Options& options)
+{
+  if (args.optionsExist(VALUOPTS)) options.value = true;
+  if (args.optionsExist(XOPTS)) options.prefix = "0x";
+  if (args.optionsExist(OCTOPTS)) options.prefix = "#";
+  if (args.optionsExist(UNIOPTS)) options.prefix = "\\U";
+  if (args.optionsExist(EMPOPTS)) options.prefix = "";
+}
 int static ParseArguments(ArgumentParser& args, Options& options)
 {
   int parsed = 0;
@@ -41,11 +49,12 @@ int static ParseArguments(ArgumentParser& args, Options& options)
     std::cout << message;
     return -1;
   }
-  if (args.optionsExist(VALUOPTS)) options.value = true;
-  if (args.optionsExist(XOPTS)) options.prefix = "0x";
-  if (args.optionsExist(OCTOPTS)) options.prefix = "#";
-  if (args.optionsExist(UNIOPTS)) options.prefix = "\\U";
-  if (args.optionsExist(EMPOPTS)) options.prefix = "";
+  SwitchOptions(args, options);
+  //if (args.optionsExist(VALUOPTS)) options.value = true;
+  //if (args.optionsExist(XOPTS)) options.prefix = "0x";
+  //if (args.optionsExist(OCTOPTS)) options.prefix = "#";
+  //if (args.optionsExist(UNIOPTS)) options.prefix = "\\U";
+  //if (args.optionsExist(EMPOPTS)) options.prefix = "";
   const std::vector<std::string> arg_list = args.getArgs();
   std::regex trans("^transparent$", std::regex_constants::icase);
   for (std::vector<std::string>::const_iterator iter = arg_list.begin(); iter < arg_list.end(); iter++)
@@ -57,10 +66,6 @@ int static ParseArguments(ArgumentParser& args, Options& options)
     }
     if (Globals::IsStringInt(*iter))
     {
-      //std::string worker = *iter;
-      //const int integer = std::stoi(worker, nullptr, 10);
-      //if (!Globals::ValueInRange(integer, 0x000000, 0xffffff)) return 3;
-      //else options.hexadecimals.push_back(integer);
       const int integer = std::stoi(std::string(*iter), nullptr, 10);
       if (!Globals::ValueInRange(integer, 0x000000, 0xffffff)) return 3;
       options.hexadecimals.push_back(integer);
@@ -68,11 +73,6 @@ int static ParseArguments(ArgumentParser& args, Options& options)
     }
     if (Globals::IsHexadecimalString(*iter))
     {
-      //std::string worker = *iter;
-      //if (worker.substr(0, 2) != "0x") worker.insert(0, "0x");
-      //const int hex = std::stoi(worker, nullptr, 16);
-      //if (!Globals::ValueInRange(hex, 0x000000, 0xffffff)) return 3;
-      //else options.hexadecimals.push_back(hex);
       std::string worker = *iter;
       if (worker.substr(0, 2) != "0x") worker.insert(0, "0x");
       const int hex = std::stoi(worker, nullptr, 16);
