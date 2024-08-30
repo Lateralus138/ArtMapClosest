@@ -1,19 +1,13 @@
 #include "stdafx.h"
-std::vector<std::string> HELPOPTS = { "/h", "/help", "/H", "/HELP" };
-std::vector<std::string> VALUOPTS = { "/v", "/value", "/V", "/VALUE" };
-std::vector<std::string> XOPTS = { "/x", "/0x", "/X", "/0X" };
-std::vector<std::string> UNIOPTS = { "/u", "/unicode", "/U", "/UNICODE" };
-std::vector<std::string> OCTOPTS = { "/o", "/octothorpe", "/O", "/octothorpe" };
-std::vector<std::string> EMPOPTS = { "/e", "/empty", "/E", "/EMPTY" };
 int static ParseArguments(ArgumentParser& args, Options& options)
 {
   int parsed = 0;
-  //std::vector<std::string> HELPOPTS = { "/h", "/help", "/H", "/HELP" };
-  //std::vector<std::string> VALUOPTS = { "/v", "/value", "/V", "/VALUE" };
-  //std::vector<std::string> XOPTS = { "/x", "/0x", "/X", "/0X" };
-  //std::vector<std::string> UNIOPTS = { "/u", "/unicode", "/U", "/UNICODE" };
-  //std::vector<std::string> OCTOPTS = { "/o", "/octothorpe", "/O", "/octothorpe" };
-  //std::vector<std::string> EMPOPTS = { "/e", "/empty", "/E", "/EMPTY" };
+  std::vector<std::string> HELPOPTS = { "/h", "/help", "/H", "/HELP" };
+  std::vector<std::string> VALUOPTS = { "/v", "/value", "/V", "/VALUE" };
+  std::vector<std::string> XOPTS = { "/x", "/0x", "/X", "/0X" };
+  std::vector<std::string> UNIOPTS = { "/u", "/unicode", "/U", "/UNICODE" };
+  std::vector<std::string> OCTOPTS = { "/o", "/octothorpe", "/O", "/octothorpe" };
+  std::vector<std::string> EMPOPTS = { "/e", "/empty", "/E", "/EMPTY" };
   if (args.optionsExist(HELPOPTS))
   {
     std::string message =

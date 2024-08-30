@@ -9,7 +9,7 @@
   - 1.0.0.0 - Initial release.
 
 #### Coming Updates
-  - NA
+  - 2.0.0.0 Possibly add features to find the closest item + shade & tint. This ***might*** give a better outcome, but not necessarily. Would just depend on the image.
 
 ---
 
