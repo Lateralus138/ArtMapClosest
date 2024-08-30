@@ -1,21 +1,44 @@
 ![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Lateralus138&repo=ArtMapClosest)
 
+- [About](#about)
+  - [Description](#description)
+  - [Minecraft ArtMap Plugin](#minecraft-artmap-plugin)
+  - [Motivation](#motivation)
+- [Usage](#usage)
+  - [Environment](#environment)
+  - [How To Use](#how-to-use)
+  - [Examples](#examples)
+- [Project Information](#project-information)
+  - [Changelog](#changelog)
+    - [Coming Updates](#coming-updates)
+  - [Source File Quality](#source-file-quality)
+  - [File MD5 Hashes](#file-md5-hashes)
+    - [Current Windows X86 MD5](#current-windows-x86-md5)
+    - [Current Windows X64 MD5](#current-windows-x64-md5)
+  - [Other Miscellaneous File Information](#other-miscellaneous-file-information)
+- [Notes](#notes)
+  - [Note 1](#note-1)
+- [Media](#media)
+- [Support Me If You Like](#support-me-if-you-like)
+- [LICENSE](#license)
+
 ---
 
-***This project is*** ![Under Construction](https://img.shields.io/static/v1?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAACmElEQVQokUWSa0iTcRTGn//26u4b6ZQ0U8lKMqykwPpgZVBEHyLp8jEoIZJADCQ0iCiStIwuZmHRioIuroQss2VkrkIrdeFckiZqdhctTXPOve8Tr7M6X8/zO+fwPEfIwy7IwQA0GgExGYQwyhCmMLRX1z2hJCJSN+xZgqAZnPgCaAUQ0EHICjSYLlKBCDdNQb7HLmeRoy3zQFnzYk/1WTckGUIXCVD+Kw+BpAxtuBXCpkN7bdXt/JL3W3J3xuHg3iTsL/NkNFWVPoWkQOj/wxooCrRhFgiTjI4n9ZVHHQObjxVEY8UGIi1zEhVFCahwdq5qvn+hHkKC0EcBigxwvAnkW3ge7L6TMi+VztOLOOKOY8ulKL68GM2emnjeLF3AZSlz2FCZ6yaHwLGv6pkv8MyxsUoHLcsLwBuHwE0rtdy2UuLWNTpmpkkszQEfnAPDAd47tbaB7NaJR+eXujfmtGTUXgFWp5uwPd8Oi1GBJEmwWYlP34L4PSFw7chPeD+MYnkWUVmy0CeNfe5N8ANIjNWpNmHzqklYrDIGRwRm2gXsM/xofRMOf1AgcbYOAfgxMvgxCmS9+dbh5A6VarxuIMdBDoJ0g+vSreytNpAEux7qqWrK82I+kC2xYOAzyFbz5QNJPrXhdRo4XK/n3WILkxPsbKqwsr8xBB3PjukhGyJJv+qqB+QvkN0mR2Fim5pU1hobzxTYOPbcyJoTNpoAlu6wdZKvIslR0O9VXe0Clc5p2Ge4WDh36ux3ThM/1RqnNhXvilU32cjvINtAf4cKdkzlSHpBTqgNY11JfLtFA+o14NU8Wx/piggNfg2yGVR8EF9/dP37PyCIoDQLs8z9hmv71nsC4wFz9klX2tD4/AEG+gBoQ7KghD8MZ2xdnt7s7wAAAABJRU5ErkJggg==&label=Under&message=Construction&style=for-the-badge&labelColor=1D1D1D&color=ffff99)***, but coming very soon.***
+<!-- ***This project is*** ![Under Construction](https://img.shields.io/static/v1?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAACmElEQVQokUWSa0iTcRTGn//26u4b6ZQ0U8lKMqykwPpgZVBEHyLp8jEoIZJADCQ0iCiStIwuZmHRioIuroQss2VkrkIrdeFckiZqdhctTXPOve8Tr7M6X8/zO+fwPEfIwy7IwQA0GgExGYQwyhCmMLRX1z2hJCJSN+xZgqAZnPgCaAUQ0EHICjSYLlKBCDdNQb7HLmeRoy3zQFnzYk/1WTckGUIXCVD+Kw+BpAxtuBXCpkN7bdXt/JL3W3J3xuHg3iTsL/NkNFWVPoWkQOj/wxooCrRhFgiTjI4n9ZVHHQObjxVEY8UGIi1zEhVFCahwdq5qvn+hHkKC0EcBigxwvAnkW3ge7L6TMi+VztOLOOKOY8ulKL68GM2emnjeLF3AZSlz2FCZ6yaHwLGv6pkv8MyxsUoHLcsLwBuHwE0rtdy2UuLWNTpmpkkszQEfnAPDAd47tbaB7NaJR+eXujfmtGTUXgFWp5uwPd8Oi1GBJEmwWYlP34L4PSFw7chPeD+MYnkWUVmy0CeNfe5N8ANIjNWpNmHzqklYrDIGRwRm2gXsM/xofRMOf1AgcbYOAfgxMvgxCmS9+dbh5A6VarxuIMdBDoJ0g+vSreytNpAEux7qqWrK82I+kC2xYOAzyFbz5QNJPrXhdRo4XK/n3WILkxPsbKqwsr8xBB3PjukhGyJJv+qqB+QvkN0mR2Fim5pU1hobzxTYOPbcyJoTNpoAlu6wdZKvIslR0O9VXe0Clc5p2Ge4WDh36ux3ThM/1RqnNhXvilU32cjvINtAf4cKdkzlSHpBTqgNY11JfLtFA+o14NU8Wx/piggNfg2yGVR8EF9/dP37PyCIoDQLs8z9hmv71nsC4wFz9klX2tD4/AEG+gBoQ7KghD8MZ2xdnt7s7wAAAABJRU5ErkJggg==&label=Under&message=Construction&style=for-the-badge&labelColor=1D1D1D&color=ffff99)***, but coming very soon.***
 
----
+--- -->
 
 ## About
+
+This is part of an "ArtMap Suite" of tools for which the root of the project can be found here:
+
+[https://github.com/Lateralus138/ArtMapSuite](https://github.com/Lateralus138/ArtMapSuite)
 
 ### Description
 
 ArtMap Closest (*am_closest*) is a command line tool created specifically for the Minecraft plugin "ArtMap". This tool takes hexadecimal color values and finds the closest Minecraft item available in the plugin that would match each color.
 
-The ArtMap plugin is limited to 60 colors plus transparency (Ender Eye) and images can not be represented pixel per pixel and therefore there is a need to find the closest value to the original color. It is possible to have up to 180 variations with the Shade and Tint tools provided by the plugin, but this tool does not provide such information at this time. Hopefully I will add these features in version 2.
-
-This is part of an "ArtMap Suite" of tools for which the root of the prject can be found here:
-[https://github.com/Lateralus138/ArtMapSuite](https://github.com/Lateralus138/ArtMapSuite).
+The ArtMap plugin is limited to 60 colors plus transparency (Ender Eye) and images can not be represented pixel per pixel and therefore there is a need to find the closest value to the original color. It is possible to have up to 180 variations with the Shade and Tint tools provided by the plugin, but this tool does not provide such information at this time. Hopefully I will add this feature in version 2.
 
 ### Minecraft ArtMap Plugin
 
@@ -36,6 +59,8 @@ Doing art with this plugin is fun, but can be a long and tedious chore and I nee
 ---
 
 ## Usage
+
+All files can be found in the [Releases](https://github.com/Lateralus138/ArtMapClosest/releases) tab/section. 32Bit (x86) and 64Bit (x64) excutables are provided though you should only need the 64bit option. 32Bit is provided just in case...
 
 ### Environment
 
@@ -132,6 +157,14 @@ Yellow Dye
 ...
 ...
 ```
+
+Get the hexadecimal value of the closest item (0x414141 = Flint)
+
+```Powershell
+PS> am_closest 0x454545 /v
+0x414141
+```
+
 
 More examples to come as the other tools and scripts are released.
 
