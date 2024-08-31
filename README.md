@@ -30,7 +30,7 @@
 
 ## About
 
-This is part of an "ArtMap Suite" of tools for which the root of the project can be found here:
+This is part of a "ArtMap Suite" of tools for which the root of the project can be found here:
 
 [https://github.com/Lateralus138/ArtMapSuite](https://github.com/Lateralus138/ArtMapSuite)
 
@@ -48,13 +48,17 @@ and as such more information about the plugin can be found there.
 
 I use this plugin when playing on the Minecraft server ***Creation Nation***:
 
-[play.cnation.net](play.cnation.net) or [buzz.cnation.net](buzz.cnation.net)
+play.cnation.net
+
+or
+
+buzz.cnation.net
 
 <img src="./docs/media/misc/creation_nation_icon.png" alt="Cration Nation Logo" width="128">
 
 ### Motivation
 
-Doing art with this plugin is fun, but can be a long and tedious chore and I needed tools to help me streanline the process.
+Doing art with this plugin is fun, but can be a long and tedious chore and I needed tools to help me streamline the process.
 
 ---
 
@@ -111,7 +115,7 @@ PS> am_closest 0xffffff
 Snow
 ```
 
-Find the closest ArtMap item to multipl colors:
+Find the closest ArtMap item to multiple colors:
 
 ```PowerShell
 PS> am_closest 0xffffff 0xff0000
@@ -165,9 +169,7 @@ PS> am_closest 0x454545 /v
 0x414141
 ```
 
-
 More examples to come as the other tools and scripts are released.
-
 
 ---
 
@@ -182,7 +184,7 @@ More examples to come as the other tools and scripts are released.
   - 1.0.0.0 - Initial release.
 
 #### Coming Updates
-  - 2.0.0.0 Possibly add features to find the closest item + shade & tint. This ***might*** give a better outcome, but not necessarily. Would just depend on the image.
+  - 2.0.0.0 Possibly add features to find the closest item + shade & tint. This ***might*** give a better outcome, but not necessarily. It would just depend on the image.
 
 ### Source File Quality
 
